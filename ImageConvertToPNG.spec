@@ -34,6 +34,7 @@ exe = EXE(
     [],
     exclude_binaries=True,
     name='ImageConvertToPNG',
+    icon='app.ico',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

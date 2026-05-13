@@ -44,6 +44,14 @@ def _get_session():
 app = FastAPI(title="Image to Transparent PNG")
 
 
+@app.get("/favicon.ico")
+async def favicon_ico():
+    return FileResponse(STATIC_DIR / "favicon.ico")
+
+@app.get("/favicon.png")
+async def favicon_png():
+    return FileResponse(STATIC_DIR / "favicon.png")
+
 @app.get("/", response_class=HTMLResponse)
 async def index():
     return (STATIC_DIR / "index.html").read_text(encoding="utf-8")
