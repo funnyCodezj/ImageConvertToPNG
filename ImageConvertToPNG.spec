@@ -9,6 +9,8 @@ datas += collect_data_files('scikit_image')
 datas += copy_metadata('pymatting')
 datas += copy_metadata('rembg')
 datas += copy_metadata('onnxruntime')
+# 内置 AI 模型，避免首次下载
+datas += [('C:/Users/lzj/.u2net/u2net.onnx', '.u2net')]
 
 
 a = Analysis(

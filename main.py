@@ -35,6 +35,9 @@ _session = None
 def _get_session():
     global _session
     if _session is None:
+        # EXE 模式下，模型已打包在 sys._MEIPASS/.u2net/ 中
+        if getattr(sys, "frozen", False):
+            os.environ["U2NET_HOME"] = str(Path(sys._MEIPASS) / ".u2net")
         _session = new_session("u2net")
     return _session
 
