@@ -140,7 +140,7 @@ def _print(msg: str):
     sys.stdout.flush()
 
 if __name__ == "__main__":
-    _print(">> 正在加载 AI 模型（首次约 176MB，后续秒级）...")
+    _print(">> 正在加载 AI 模型...")
     _get_session()  # 在这里才真正加载模型，用户能看到进度
     _print(">> AI 模型加载完成！")
     _print(">> 正在启动 Web 服务器...")
